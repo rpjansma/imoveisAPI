@@ -3,7 +3,7 @@ package com.example.imoveisapi.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="imobiliaria")
+@Table(name="imobiliarias")
 public class ImobiliariaModel {
 
 
@@ -11,17 +11,25 @@ public class ImobiliariaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String endereco;
     private String nome;
     private String site;
     private int creci;
+    private String endereco;
+    private int numero;
+    private String complemento;
+    private String cidade;
+    private String estado;
 
-    public ImobiliariaModel(Long id, String endereco, String nome, String site, int creci) {
+    public ImobiliariaModel(Long id, String nome, String site, int creci, String endereco, int numero, String complemento, String cidade, String estado) {
         this.id = id;
-        this.endereco = endereco;
         this.nome = nome;
         this.site = site;
         this.creci = creci;
+        this.endereco = endereco;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.cidade = cidade;
+        this.estado = estado;
     }
 
     public ImobiliariaModel() {
@@ -67,4 +75,39 @@ public class ImobiliariaModel {
     public void setCreci(int creci) {
         this.creci = creci;
     }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+
 }
+
